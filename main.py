@@ -11,4 +11,11 @@ def main():
 
 
 if __name__ == "__main__":
+    import time
+
+    t_start = time.time()
     main()
+    t_end = time.time()
+    print("Total time:")
+    minutes, seconds = divmod(t_end - t_start, 60)
+    print(f"{int(minutes)} minutes and {int(seconds)} seconds")

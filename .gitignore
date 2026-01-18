@@ -1,2 +1,4 @@
 *.pdf
 output_md/
+*.bib
+*.typ
