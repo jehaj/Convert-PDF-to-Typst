@@ -20,5 +20,11 @@ How can it be done?
       - [`typst-languagetool`](https://github.com/antonWetzel/typst-languagetool)
         is also an option.
 
-Pix2Text is killed when running on PDF of size 162 MB on my 16GB RAM machine.
-I will try again running on chunks of pages i.e. chapters.
+Pix2Text is killed when running on PDF with 162 pages (size 1.1MB) on my 16GB
+RAM machine. I will try again running on chunks of pages i.e. chapters.
+
+Requires PDF to be image-based. Convert text-based PDF to image-based PDF with
+`magick`:
+```shell
+magick -density 150 input.pdf output.pdf
+```
