@@ -28,3 +28,23 @@ Requires PDF to be image-based. Convert text-based PDF to image-based PDF with
 ```shell
 magick -density 150 input.pdf output.pdf
 ```
+
+Or apparently not necessary, IDK. The documentation is not the greatest.
+
+## Pix2Text
+
+Using the English model has issues pertaining `font_path`. Adding
+
+`"font_path": None,` to `.venv/lib/python3.12/site-packages/cnocr/ppocr/rapid_recognizer.py`
+line 26 and forwards such that it becomes
+
+```python
+class Config(dict):
+    DEFAULT_CFG = {
+        "font_path": None,
+        "engine_type": EngineType.ONNXRUNTIME,
+```
+
+fixes the issue. Mentioned at [Issue 364 at CnOCR](https://github.com/breezedeus/CnOCR/issues/364#issuecomment-3205088342).
+
+Took 33 minutes and 17 seconds to run.

@@ -419,10 +419,14 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "pix2text" },
+    { name = "tqdm" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "pix2text", specifier = ">=1.1.4" }]
+requires-dist = [
+    { name = "pix2text", specifier = ">=1.1.4" },
+    { name = "tqdm", specifier = ">=4.67.1" },
+]
 
 [[package]]
 name = "cycler"
